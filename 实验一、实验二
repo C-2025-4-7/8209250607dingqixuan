@@ -1,0 +1,306 @@
+/*实验一 1.
+#include<iostream>
+using namespace std;
+int main()
+{
+	int i = 1;
+	cout << i++ << endl;
+	cout << "Welcome to C++" << endl;
+	return 0;
+}*/
+/*实验一 2.
+#define PI 3.14
+#include<iostream>
+using namespace std;
+int main()
+{
+	int r, h;
+	cout<< "请输入圆锥的底面半径和高：" << endl;
+	cin >> r >> h;
+	cout << "圆锥的体积为" << PI * r * r * h / 3 << endl;
+	return 0;
+}
+*/
+/*实验一 3.
+* 结果为char length=1,int length=4
+#include<iostream>
+using namespace std;
+int main()
+{
+	cout << "char length:" << sizeof(char) << endl;
+	cout << "int length:" << sizeof(int) << endl;
+}*/
+/*实验一 4.
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	unsigned int testUnint = 65534;//oxfffe
+	cout << "output in unsigned int 1 type:" << testUnint<< endl;//<<oct;
+	cout << "output in char type:!" << static_cast<char>(testUnint) << endl;
+	cout << "output in short type:" << static_cast<short>(testUnint) << endl;//为什么结果为-2?:
+	cout << "output in int type:" << static_cast<int>(testUnint) << endl;
+	cout << "output in double type:" << static_cast<double>(testUnint) << endl;
+	cout << "output in double type:" << setprecision(4) << static_cast<double>(testUnint) << endl;
+	cout << "output in Hex unsigned int type:" << hex << testUnint << endl; //16进制输出
+	cout<< "output in Oct unsigned int type:" << oct << testUnint << endl; //8进制输出
+	system("pause");
+	return 0;
+}
+
+*/
+/*实验一 5.
+#include<iostream>
+using namespace std;
+int main()
+{
+	int t;
+	cout << "请输入华氏温度" << endl;
+	cin >> t;
+	cout << "对应的摄氏温度为"<<(t - 32) * 5 / 9 << endl;
+	return 0;
+}
+*/
+/*实验二 1.
+#include<iostream>
+using namespace std;
+int main()
+{
+	char i;
+	cout << "请输入一个字符：" << endl;
+	cin >>i;
+	if ('a' <=i&&i <='z')
+	{
+		cout << (char)(i - 32) << endl;
+	}
+	else
+	{
+		cout <<(int)(i+1) << endl;
+	}
+	return 0;
+}
+*/
+/*实验二 2.
+#include<iostream>
+using namespace std;
+int main()
+{
+	float x;
+	cout << "请输入x:" << endl;
+	cin >> x;
+	if (x>0&&x<=10)
+	{
+		if (x < 1)
+		{
+			cout << "y="<<(3 - 2 * x) << endl;
+		}
+		else if (1 <= x && x < 5)
+		{
+			cout << "y="<<(2 / (4 * x) + 1) << endl;
+		}
+		else
+		{
+			cout << "y="<<x * x << endl;
+		}
+		}
+	else
+		{
+		cout << "输入错误" << endl;
+	}
+
+	return 0;
+}
+*/
+/*实验二 3.
+#include<iostream>
+using namespace std;
+int main()
+{
+	float a, b, c,C;
+	cout << "请输入三角形三边：" << endl;
+	cin >> a >> b >> c;
+	if (a + b > c && a + c > b && b + c > a)
+	{
+		if(a==b||b==c||a==c)
+		{
+		cout << "该三角形为等腰三角形" << endl;
+	}
+	else
+	{
+		cout << "该三角形不是等腰三角形" << endl;
+	}
+		C = (a + b + c);
+		cout << "且周长为"<<C << endl;
+	}
+	else
+	{
+		cout << "这三边不能构成三角形" << endl;
+	}
+	return 0;
+}
+*/
+/*实验二 4.
+#include<iostream>
+using namespace std;
+int main()
+{
+	float a,b;
+	char op;
+	cout<< "请输入表达式：" << endl;
+	cin >> a >> op >> b;
+	switch (op)
+	{
+		case '+':
+		cout <<"="<< a + b << endl;
+		break;
+		case '-':
+			cout << "="<<a - b << endl;
+			break;
+			case '*':
+				cout << "="<<a * b << endl;
+				break;
+				case '/':
+					if (b != 0)
+					{
+						cout <<"="<< a / b << endl;
+					}
+					else
+					{
+						cout << "除数不能为零" << endl;
+					}
+					break;
+					case'%':
+						if (b!= 0)
+						{
+							cout <<"="<<(int)a %(int) b << endl;
+							}
+						else
+							{
+							cout << "除数不能为零" << endl;
+						}
+						break;
+					default:
+						cout << "运算符非法" << endl;
+						}
+	return 0;
+	}
+	*/
+/*实验二 5.
+#include<iostream>
+using namespace std;
+int main()
+{
+int a=0,b=0,c=0,d=0;
+	char f;
+	while((f=getchar()!='\n'))
+		{
+		if (isalpha(f))
+		{
+		a++; 
+		}
+		else if(isspace(f))
+		{
+		b++
+		}
+		else if(isdigit(f))
+		{
+		c++
+		}
+		else
+		{
+		d++
+		}
+		}
+	cout<<"字母有" << a << "个" << endl;
+	cout<<"空格有"<<b << "个" << endl;
+	cout<<"数字有"<<c << "个" << endl;
+	cout<<"其他字符有"<<d << "个" << endl;
+	return 0;
+	}
+	*/
+/*实验二 6.
+#include<iostream>
+using namespace std;
+int min(int x, int y)
+{
+	int z;
+	z = (x > y) ? x : y;
+	return z;
+}
+int main()
+{
+	int a, b;
+	cout<<"请输入两个正整数：" << endl;
+	cin >> a >> b;
+	int i = min(a,b) ;
+	while (i >= 1)
+	{
+		if (a % i == 0 && b % i == 0)
+		{
+			cout << "最大公约数为" << i << endl;
+			break;
+		}
+		else
+		{
+			i--;
+		}
+	}
+	cout << "最小公倍数为" << a*b/i << endl;
+	return 0;
+}
+*/
+/*实验二 7.
+#include<iostream>
+using namespace std;
+int main()
+{
+	for (int i = 1;i <= 5;i++)
+	{
+		for (int j = 1;j <= i;j++)
+		{
+			cout << "*";
+		}
+		cout << endl;
+	}
+	return 0;
+}
+*/
+/*实验二 8.
+#include<iostream>
+using namespace std;
+int main()
+{
+	float a;
+	cout<<"请输入一个正数：" << endl;
+	cin>> a;
+	float x = a,xn=(a+1)/2;
+	while(-0.000001<(xn-x)<0.000001)
+		{
+		x = xn;
+		xn = (a / x + x) / 2;
+	}
+	cout << "平方根为：" << xn << endl;
+	return 0;
+	}
+*/
+/*实验二 9.
+#include<iostream>
+using namespace std;
+int main()
+{
+	float b = 0.8;
+	int d = 1;
+	int a = 2;
+	float c;
+	while (a <= 100)
+	{
+		a = a * 2;
+		d++;
+	}
+	c = b*a / d;
+	cout<<"平均每天花"<<c<<"元"<<endl;
+	return 0;
+	}
+*/
+ 
